@@ -4,24 +4,24 @@
 > Xem [examples/sample-bug-report.md](../examples/sample-bug-report.md) để hiểu cách viết bug report tốt.
 > Mỗi bug cần: tiêu đề mô tả hành vi lỗi, bước tái hiện, expected vs actual, severity + giải thích.
 
-| Thông tin | |
-|---|---|
-| **Nhóm** | `<!-- Tên nhóm -->` |
+| Thông tin        |                       |
+|------------------|-----------------------|
+| **Nhóm**         | `<!-- Tên nhóm -->`   |
 | **Ngày báo cáo** | `<!-- DD/MM/YYYY -->` |
 
 ---
 
 ## BUG-01
 
-| Thuộc tính | Chi tiết |
-|-----------|---------|
-| **Mã lỗi** | BUG-01 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| Thuộc tính          | Chi tiết                       |
+|---------------------|--------------------------------|
+| **Mã lỗi**          | BUG-01                         |
+| **TC liên quan**    | `<!-- TC-xx -->`               |
+| **REQ liên quan**   | `<!-- REQ-xx -->`              |
+| **Mức độ**          | `<!-- High / Medium / Low -->` |
+| **Người phát hiện** | `<!-- Họ tên thành viên -->`   |
+| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`          |
+| **Trạng thái**      | `<!-- Open / Closed -->`       |
 
 **Tiêu đề:**
 `<!-- Mô tả hành vi lỗi cụ thể -->`
@@ -58,15 +58,15 @@
 
 ## BUG-02
 
-| Thuộc tính | Chi tiết |
-|-----------|---------|
-| **Mã lỗi** | BUG-02 |
-| **TC liên quan** | `<!-- TC-xx -->` |
-| **REQ liên quan** | `<!-- REQ-xx -->` |
-| **Mức độ** | `<!-- High / Medium / Low -->` |
-| **Người phát hiện** | `<!-- Họ tên thành viên -->` |
-| **Ngày phát hiện** | `<!-- DD/MM/YYYY -->` |
-| **Trạng thái** | `<!-- Open / Closed -->` |
+| Thuộc tính          | Chi tiết                       |
+|---------------------|--------------------------------|
+| **Mã lỗi**          | BUG-02                         |
+| **TC liên quan**    | `<!-- TC-xx -->`               |
+| **REQ liên quan**   | `<!-- REQ-xx -->`              |
+| **Mức độ**          | `<!-- High / Medium / Low -->` |
+| **Người phát hiện** | `<!-- Họ tên thành viên -->`   |
+| **Ngày phát hiện**  | `<!-- DD/MM/YYYY -->`          |
+| **Trạng thái**      | `<!-- Open / Closed -->`       |
 
 **Tiêu đề:**
 `<!-- Mô tả hành vi lỗi -->`
