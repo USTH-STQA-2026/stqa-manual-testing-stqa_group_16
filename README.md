@@ -27,7 +27,7 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 | 3 | 23BA14167 | Trần Thị Khánh Linh     | Thành viên  |
 | 4 | 23BA14008 | Lương Quỳnh Anh         | Thành viên  |
 | 5 | 23BA14183 | Nguyễn Thị Lương        | Thành viên  |
-| 6 | 2410042   | Lê Hiền Anh (Tôi)       | Thành viên  |
+| 6 | 2410042   | Lê Hiền Anh             | Thành viên  |
 
 ---
 
