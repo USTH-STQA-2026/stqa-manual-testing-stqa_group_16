@@ -22,7 +22,7 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 
 |   | MSSV      | Họ và tên               | Vai trò     |
 |---|-----------|-------------------------|-------------|
-| 1 | 23BA14028 | Vũ Minh Châu            | Nhóm trưởng |
+| 1 | 23BA14028 |Vũ Minh Châu            | Nhóm trưởng |
 | 2 | 23BA14184 | Nguyễn Minh Lương       | Thành viên  |
 | 3 | 23BA14167 | Trần Thị Khánh Linh     | Thành viên  |
 | 4 | 23BA14008 | Lương Quỳnh Anh         | Thành viên  |
