@@ -20,14 +20,14 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 | **Lớp**      | 252ICT2012.L1 |
 | **Học kỳ**   | HK2 2025-2026 |
 
-| # | MSSV      | Họ và tên               | Vai trò     |
+|   | MSSV      | Họ và tên               | Vai trò     |
 |---|-----------|-------------------------|-------------|
-| 1 | 23BA14183 | Vũ Minh Châu            | Nhóm trưởng |
+| 1 | 23BA14028 | Vũ Minh Châu            | Nhóm trưởng |
 | 2 | 23BA14184 | Nguyễn Minh Lương       | Thành viên  |
 | 3 | 23BA14167 | Trần Thị Khánh Linh     | Thành viên  |
 | 4 | 23BA14008 | Lương Quỳnh Anh         | Thành viên  |
 | 5 | 23BA14183 | Nguyễn Thị Lương        | Thành viên  |
-| 6 | 2410042   | Lê Hiền Anh (Tôi)       | Thành viên  |
+| 6 | 2410042   | Lê Hiền Anh             | Thành viên  |
 
 ---
 
