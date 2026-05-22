@@ -45,6 +45,7 @@ Status displays "Đang mượn"
 The book status does not match the label required by REQ-02, making the interface inconsistent and potentially confusing during status checks.
 
 **Evidence:**
+![TC-10](stqa-manual-testing-stqa_group_16\Screenshot\TC-10.png)
 
 **Proposed Fix:**
 Standardize the displayed status label for borrowed books to "Đã mượn" in the book list as required by REQ-02.
