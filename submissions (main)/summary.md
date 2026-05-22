@@ -110,4 +110,4 @@ The test execution reaches an 80.33% pass rate with 49 of 61 TCs passing. The sy
 
 | AI Tool | Used For | Verification and Edits |
 |------------|-------------------|-----------------------------------|
-| Codex | Reviewing and completing `bug-reports.md` and `summary.md` from existing documents | Cross-checked against `test-cases.md`, `test-execution.md`, and the SRS; evidence fields remain blank for the group to add later |
+| Codex | Reviewing and completing `bug-reports.md` and `summary.md` from existing documents (excel team works together)| Cross-checked against `test-cases.md`, `test-execution.md`, and the SRS; evidence fields remain blank for the group to add later |
