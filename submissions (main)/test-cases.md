@@ -178,7 +178,7 @@
 | Result | ✔ | ✔ | ✖ | ✖ |
 
 ---
-
+ 
 ## Step 2: Test Cases
 
 | TC ID | Test Objective | Preconditions | Steps | Input Data | Expected Result | REQ | Technique |
