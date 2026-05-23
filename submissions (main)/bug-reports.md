@@ -91,8 +91,8 @@ Does not show the list for the searched category
 Users cannot filter books by category when valid input uses a different letter case from the displayed data, reducing book lookup usefulness.
 
 **Evidence:**
-![TC-14](Screenshot\TC-14.png) 
-![TC-14(2)](Screenshot\TC-14(2).png)
+![TC-14](Screenshot/TC-14.png) 
+![TC-14(2)](Screenshot/TC-14(2).png)
 
 **Proposed Fix:**
 Check the category filtering logic and normalize matching for case-insensitive comparison before querying or filtering data.
@@ -139,8 +139,8 @@ Does not show book information when searching in Filter by Category
 Users of the English interface get no category-filter results from keywords suggested by the interface, making the filter difficult to use.
 
 **Evidence:**
-![TC-16](Screenshot\TC-16.png) 
-![TC-16(2)](Screenshot\TC-16(2).png)
+![TC-16](Screenshot/TC-16.png) 
+![TC-16(2)](Screenshot/TC-16(2).png)
 
 **Proposed Fix:**
 Align category filter values with translated labels and map English keywords to the corresponding category data.
@@ -186,7 +186,7 @@ Shows the expired-account message instead of the suspended-account message
 The user receives the wrong account-status message, making the borrow rejection reason unclear and likely to be handled incorrectly.
 
 **Evidence:**
-![TC-22](Screenshot\TC-22.png)
+![TC-22](Screenshot/TC-22.png)
 
 **Proposed Fix:**
 Check the member-status branch used for borrow rejection and show the suspended-account message for `MEM004`.
@@ -232,7 +232,7 @@ Borrow succeeds; MEM006 can borrow three more books
 The borrowed-book limit is not enforced, violating borrowing rules and allowing a member to hold more books than permitted.
 
 **Evidence:**
-![TC-24](Screenshot\TC-24.png)
+![TC-24](Screenshot/TC-24.png)
 
 **Proposed Fix:**
 Check active borrow record count before creating a new record; when the count reaches 3, reject and show the limit-exceeded message.
@@ -278,7 +278,7 @@ Return succeeds without a warning
 The user is not told that the record is returned after due date, leaving important information out of the overdue return flow.
 
 **Evidence:**
-![TC-30](Screenshot\TC-30.png)
+![TC-30](Screenshot/TC-30.png)
 
 **Proposed Fix:**
 After detecting a return date after the due date, keep processing the return but show the overdue warning required by REQ-05.
@@ -324,8 +324,8 @@ Return succeeds
 A member can change another member's borrow/return status, causing record inconsistency and violating the rule that members return only their own books.
 
 **Evidence:**
-![TC-36](Screenshot\TC-36.png)
-![TC-36(2)](Screenshot\TC-36(2).png)
+![TC-36](Screenshot/TC-36.png)
+![TC-36(2)](Screenshot/TC-36(2).png)
 
 **Proposed Fix:**
 Check record ownership before the return action and reject the action when the record does not belong to the logged-in member.
@@ -370,8 +370,8 @@ BR001 does not display status "Quá hạn"
 The member cannot recognize that an own record is overdue, making displayed status information inconsistent with the overdue handling flow.
 
 **Evidence:**
-![TC-39](Screenshot\TC-39.png)
-![TC-39(2)](Screenshot\TC-39(2).png)
+![TC-39](Screenshot/TC-39.png)
+![TC-39(2)](Screenshot/TC-39(2).png)
 
 **Proposed Fix:**
 Synchronize the updated overdue status into the record list shown to the owning member.
@@ -417,7 +417,7 @@ Rejects with an invalid email message
 The librarian cannot create a member with the valid test-case data, interrupting member management.
 
 **Evidence:**
-![TC-45](Screenshot\TC-45.png)
+![TC-45](Screenshot/TC-45.png)
 
 **Proposed Fix:**
 Check the email validator for valid cases with `@` and `.` in the domain before rejecting member creation.
@@ -463,8 +463,8 @@ Member creation succeeds
 The system stores an account with an email that is invalid under REQ-07, reducing contact-data quality and potentially affecting email-based flows.
 
 **Evidence:**
-![TC-49](Screenshot\TC-49.png)
-![TC-49(2)](Screenshot\TC-49(2).png)
+![TC-49](Screenshot/TC-49.png)
+![TC-49(2)](Screenshot/TC-49(2).png)
 
 **Proposed Fix:**
 Require email to contain `@` and a `.` in the domain before allowing member creation.
@@ -510,7 +510,7 @@ Rejects with an invalid email message
 The librarian does not receive the correct error for the empty phone-number field, making the input harder to fix.
 
 **Evidence:**
-![TC-52](Screenshot\TC-52.png)
+![TC-52](Screenshot/TC-52.png)
 
 **Proposed Fix:**
 Separate empty phone-number validation from email validation and show the phone-number error when Phone is invalid.
@@ -555,7 +555,7 @@ Can view another member's borrow record
 A member can view a borrow record not owned by that member, exposing borrowing information and violating role-based access control.
 
 **Evidence:**
-![TC-55](Screenshot\TC-55.png)
+![TC-55](Screenshot/TC-55.png)
 
 **Proposed Fix:**
 Filter borrow records by the logged-in member in both data retrieval and display; only librarians should view records for all members.
