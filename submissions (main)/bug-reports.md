@@ -559,3 +559,89 @@ A member can view a borrow record not owned by that member, exposing borrowing i
 
 **Proposed Fix:**
 Filter borrow records by the logged-in member in both data retrieval and display; only librarians should view records for all members.
+
+## BUG-13
+
+| Attribute           | Details        |
+|---------------------|----------------|
+| **Bug ID**          | BUG-13         |
+| **Related TC**      | TC-41          |
+| **Related REQ**     | REQ-07         |
+| **Severity**        | Medium         |
+| **Reporter**        | STQA_Group_16  |
+| **Found On**        | 01/06/2026     |
+| **Status**          | Open           |
+
+**Title:**
+BR003 of MEM006 show status "Quá hạn"
+
+**Environment:**
+- Browser: Chromium/Chrome
+- Operating System: Linux
+- Interface Language: Vietnamese
+
+**Preconditions:**
+Reset. Login LIB001
+
+**Steps to Reproduce:** <br>
+1.Tab Sách. <br>
+2 Tab Mượn/Trả. <br>
+3 Check book overdate.
+
+**Expected Result:**
+BR003 of MEM006 show "Đang mượn" ( not overdate ) 
+
+**Actual Result:**
+BR003 of MEM006 show status "Quá hạn"
+
+**Impact:**
+Wrong and can't check status
+
+**Evidence:**
+![TC-41](Screenshot/TC-41.png)
+
+**Proposed Fix:**
+
+## BUG-14
+
+| Attribute           | Details        |
+|---------------------|----------------|
+| **Bug ID**          | BUG-14         |
+| **Related TC**      | TC-43          |
+| **Related REQ**     | REQ-06         |
+| **Severity**        | Medium         |
+| **Reporter**        | STQA_Group_16  |
+| **Found On**        | 01/06/2026     |
+| **Status**          | Open           |
+
+**Title:**
+System:  convert status into “Đang mượn: 0 sách” when book isn't returned
+
+**Environment:**
+- Browser: Chromium/Chrome
+- Operating System: Linux
+- Interface Language: Vietnamese
+
+**Preconditions:**
+MEM002 borrowing, not returned, overdate
+
+**Steps to Reproduce:** <br>
+1. Login into account Librarian <br>
+2. Tab “Mượn/Trả” <br>
+3. Click “Kiểm tra sách quá hạn” <br>
+4. Tab “Thành viên” <br>
+5. Lookup MEM002 and check status/quantity of book borrowing
+
+**Expected Result:**
+System still show true quantity of book borrowing of MEM002 is 1 book. Not return into “Đang mượn": 0 sách” when book isn't returned.
+
+**Actual Result:**
+System:  convert status into “Đang mượn: 0 sách” when book isn't returned
+
+**Impact:**
+
+
+**Evidence:**
+![TC-43](Screenshot/TC-43.png)
+
+**Proposed Fix:**

@@ -16,12 +16,12 @@
 | Metric               | Value   |
 |----------------------|---------|
 | Total Test Cases     | 61      |
-| Pass                 | 49      |
-| Fail                 | 12      |
+| Pass                 | 47      |
+| Fail                 | 14      |
 | Blocked              | 0       |
 | Not Run              | 0       |
-| **Pass Rate**        | 80.33%  |
-| **Bugs Found**       | 12      |
+| **Pass Rate**        | 75.8%   |
+| **Bugs Found**       | 24.2%   |
 
 ### Distribution by Functional Area
 
@@ -32,8 +32,8 @@
 | REQ-03 — Search Books | 6 | 4 | 2 | 2 | Search cases pass; category filtering still has defects |
 | REQ-04 — Borrow Book | 11 | 9 | 2 | 2 | Most cases pass; message and book-limit defects remain |
 | REQ-05 — Return Book | 9 | 7 | 2 | 2 | Overdue warning and return authorization defects remain |
-| REQ-06 — Overdue Handling | 8 | 7 | 1 | 1 | Librarian flow works; member status display still has a defect |
-| REQ-07 — Member Management | 8 | 5 | 3 | 3 | Highest fail count; input validation defects remain |
+| REQ-06 — Overdue Handling | 8 | 6 | 2 | 2 | Librarian flow works; member status display still has a defect |
+| REQ-07 — Member Management | 8 | 4 | 4 | 4 | Highest fail count; input validation defects remain |
 | REQ-08 — Borrow Record Lookup | 9 | 8 | 1 | 1 | A member record-visibility defect remains |
 
 ### Bug Distribution by Severity
@@ -41,7 +41,7 @@
 | Severity | Count | Bug IDs |
 |--------|----------|---------|
 | High   | 3        | BUG-05, BUG-07, BUG-12 |
-| Medium | 7        | BUG-02, BUG-03, BUG-04, BUG-06, BUG-08, BUG-09, BUG-10 |
+| Medium | 9        | BUG-02, BUG-03, BUG-04, BUG-06, BUG-08, BUG-09, BUG-10, BUG-13, BUG-14 |
 | Low    | 2        | BUG-01, BUG-11 |
 
 ---
