@@ -3,7 +3,7 @@
 | Information      |               |
 |------------------|---------------|
 | **Group**        | STQA_Group_16 |
-| **Report Date**  | 20/05/2026    |
+| **Report Date**  | 04/06/2026    |
 
 ---
 
@@ -565,7 +565,7 @@ Filter borrow records by the logged-in member in both data retrieval and display
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-13         |
-| **Related TC**      | TC-41          |
+| **Related TC**      | TC-41 (Bonus)  |
 | **Related REQ**     | REQ-07         |
 | **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
@@ -595,7 +595,7 @@ BR003 of MEM006 show "Đang mượn" ( not overdate )
 BR003 of MEM006 show status "Quá hạn"
 
 **Impact:**
-Wrong and can't check status
+Affects data accuracy of book status but does not crash the system or block the main return workflow.
 
 **Evidence:**
 ![TC-41](Screenshot/TC-41.png)
@@ -607,7 +607,7 @@ Wrong and can't check status
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-14         |
-| **Related TC**      | TC-43          |
+| **Related TC**      | TC-43 (Bonus)  |
 | **Related REQ**     | REQ-06         |
 | **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
@@ -639,7 +639,7 @@ System still show true quantity of book borrowing of MEM002 is 1 book. Not retur
 System:  convert status into “Đang mượn: 0 sách” when book isn't returned
 
 **Impact:**
-
+Causes data inconsistency in member records, directly impacting the librarian's tracking ability, but a workaround (checking book history) exists.
 
 **Evidence:**
 ![TC-43](Screenshot/TC-43.png)

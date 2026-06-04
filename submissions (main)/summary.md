@@ -6,7 +6,7 @@
 |-----------------------|----------------------------|
 | **Group**             | STQA_Group_16              |
 | **Class**             | 252ICT2012.L1              |
-| **Report Date**       | 20/05/2026                 |
+| **Report Date**       | 04/06/2026                 |
 | **System Under Test** | https://stqa.rbc.vn — v1.0 |
 
 ---
@@ -15,13 +15,13 @@
 
 | Metric               | Value   |
 |----------------------|---------|
-| Total Test Cases     | 61      |
-| Pass                 | 47      |
+| Total Test Cases     | 63      |
+| Pass                 | 49      |
 | Fail                 | 14      |
 | Blocked              | 0       |
 | Not Run              | 0       |
-| **Pass Rate**        | 75.8%   |
-| **Bugs Found**       | 24.2%   |
+| **Pass Rate**        | 77.8%   |
+| **Bugs Found**       | 22.2%   |
 
 ### Distribution by Functional Area
 
@@ -32,8 +32,8 @@
 | REQ-03 — Search Books | 6 | 4 | 2 | 2 | Search cases pass; category filtering still has defects |
 | REQ-04 — Borrow Book | 11 | 9 | 2 | 2 | Most cases pass; message and book-limit defects remain |
 | REQ-05 — Return Book | 9 | 7 | 2 | 2 | Overdue warning and return authorization defects remain |
-| REQ-06 — Overdue Handling | 8 | 6 | 2 | 2 | Librarian flow works; member status display still has a defect |
-| REQ-07 — Member Management | 8 | 4 | 4 | 4 | Highest fail count; input validation defects remain |
+| REQ-06 — Overdue Handling | 9 | 7 | 2 | 2 | Librarian flow works; member status display still has a defect |
+| REQ-07 — Member Management | 9 | 5 | 4 | 4 | Highest fail count; input validation defects remain |
 | REQ-08 — Borrow Record Lookup | 9 | 8 | 1 | 1 | A member record-visibility defect remains |
 
 ### Bug Distribution by Severity
@@ -50,9 +50,9 @@
 
 | Technique | Applied REQs | TC Count | Application Explanation |
 |----------|----------------------|---------------|-------------------------|
-| EP | REQ-01, REQ-02, REQ-03, REQ-04, REQ-05, REQ-06, REQ-07, REQ-08 | 40 | Splits data and roles into representative valid and invalid partitions, such as login success/failure, book status, valid email, and existing/non-existing borrow records. |
+| EP | REQ-01, REQ-02, REQ-03, REQ-04, REQ-05, REQ-06, REQ-07, REQ-08 | 41 | Splits data and roles into representative valid and invalid partitions, such as login success/failure, book status, valid email, and existing/non-existing borrow records. |
 | BVA | REQ-04, REQ-05, REQ-06 | 9 | Checks business boundaries such as borrowed-book counts around the limit of 3, return timing before/on/after due date, and dueDate versus currentDate. |
-| DT | REQ-04, REQ-05, REQ-06, REQ-07, REQ-08 | 29 | Combines permission, book/member status, record ownership, and valid-data conditions to check each decision rule. |
+| DT | REQ-04, REQ-05, REQ-06, REQ-07, REQ-08 | 30 | Combines permission, book/member status, record ownership, and valid-data conditions to check each decision rule. |
 
 ---
 
@@ -60,13 +60,13 @@
 
 ### 4.1. Strengths
 
-- All 61 test cases were executed; no test case is Blocked or Not Run.
+- All 63 test cases were executed; no test case is Blocked or Not Run.
 - REQ-01 passes 6/6 TCs. The main flows in REQ-04, REQ-06, and REQ-08 also pass most executed TCs.
 - The test set covers valid data, invalid data, boundaries, and permission/status rules through EP, BVA, and Decision Tables.
 
 ### 4.2. Weaknesses
 
-- 12 of 61 TCs fail. REQ-07 has the largest concentration with 3 member-data validation bugs.
+- 14 of 63 TCs fail. REQ-07 has the largest concentration with 3 member-data validation bugs.
 - Authorization defects in borrow record and return flows need attention: a member can return another member's book and view another member's record.
 - Several statuses or messages do not meet the requirements, including book status, borrow rejection reason, overdue warning, and overdue status shown to members.
 - Category filtering still fails for different letter case and for English keywords after language switching.
@@ -87,14 +87,16 @@
 | 8 | BUG-04 | Medium | The system reports the wrong reason when a suspended account is denied borrowing. |
 | 9 | BUG-02 | Medium | Category filtering returns no results for valid keywords with different letter case. |
 | 10 | BUG-03 | Medium | Filter by Category returns no results for suggested English keywords after language switching. |
-| 11 | BUG-11 | Low | An empty phone number shows an error for the wrong field while the action is still rejected. |
-| 12 | BUG-01 | Low | A book status label does not match REQ-02 but does not block a core flow. |
+| 11 | BUG-13 | Medium | Affects data accuracy of book status but does not crash the system or block the main return workflow. |
+| 12 | BUG-14 | Medium | Causes data inconsistency in member records, directly impacting the librarian's tracking ability, but a workaround (checking book history) exists. |
+| 13 | BUG-11 | Low | An empty phone number shows an error for the wrong field while the action is still rejected. |
+| 14 | BUG-01 | Low | A book status label does not match REQ-02 but does not block a core flow. |
 
 ---
 
 ## 6. Conclusion
 
-The test execution reaches an 80.33% pass rate with 49 of 61 TCs passing. The system satisfies most executed test cases for login, borrowing, overdue handling, and borrow record lookup, but the borrow/return and member-management flows should not be treated as stable until the authorization, borrow-limit, and validation defects above are addressed.
+The test execution reaches an 77.6% pass rate with 49 of 63 TCs passing. The system satisfies most executed test cases for login, borrowing, overdue handling, and borrow record lookup, but the borrow/return and member-management flows should not be treated as stable until the authorization, borrow-limit, and validation defects above are addressed.
 
 ---
 

@@ -223,9 +223,11 @@
 | TC-38 | Librarian views all overdue records (DT-R1) | Run after TC-35 | 1. Log in as LIB001 -> 2. View overdue list | LIB001 | Show all records with dueDate <= 19/05/2026 | REQ-06 | DT |
 | TC-39 | Member sees own overdue record (DT-R2) | Run after TC-35 | 1. Log in as MEM002 -> 2. Open the Mượn/Trả tab -> 3. Observe BR001 | MEM002 / BR001 | BR001 displays status "Quá hạn" for MEM002 | REQ-06 | DT |
 | TC-40 | Member cannot view another member's overdue record (DT-R3) | Reset. Log in as MEM006 | 1. Open the Mượn/Trả tab -> 2. Observe overdue list | MEM006 / BR001 (owned by MEM002) | BR001 does not appear in MEM006's interface | REQ-06 | DT |
+| TC-41 (Bonus) | The librarian checks the "Quá hạn" status of members currently borrowing (UI/UX error) (Bonus based on document SRS) | Reset. Login LIB001 | 1.Tab Sách. -> 2. Tab Mượn/Trả. -> 3 Check book overdate. | BR003 (borrowing by MEM006) | BR003 of MEM006 show "Đang mượn" ( not overdate ) | REQ-07 | DT .EP  |
 | TC-41 | Member without overdue records sees none (DT-R4) | Reset. Log in as MEM003 | 1. Open the Mượn/Trả tab -> 2. View overdue list | MEM003 dam.tran@email.com — no overdue records | Show no overdue records | REQ-06 | DT |
 | TC-42 | BVA: dueDate < currentDate marks overdue | Reset. Log in as LIB001 | 1. Click "Kiểm tra quá hạn" -> 2. Observe BR001 | BR001: dueDate=15/09/2024, currentDate=19/05/2026 (< ) | BR001 is marked "Quá hạn" | REQ-06 | BVA |
 | TC-43 | BVA: dueDate = currentDate marks overdue | Reset. Log in as LIB001 | 1. Click "Kiểm tra quá hạn" -> 2. Observe the record due today | Assumed record: dueDate = today (19/05/2026) | The record is marked "Quá hạn" (SRS: <= currentDate) | REQ-06 | BVA |
+| TC-43 (Bonus) | Verify synchronization of borrowed book counts between the "Mượn/Trả" and "Thành viên" after checking overdue books. | Reset. Member borrowing book and having overdated book | 1. Login into account Librarian -> 2. Tab “Mượn/Trả” -> 3. Click “Kiểm tra sách quá hạn” -> 4. Tab “Thành viên” -> 5. Lookup MEM002 and check status/quantity of book borrowing | MEM002 borrowing, not returned, overdate | System still show true quantity of book borrowing of MEM002 is 1 book. Not return into “Đang mượn": 0 sách” when book isn't returned. | REQ-06 | DT, EP |
 | TC-44 | Member cannot access the overdue check function | Reset. Log in as MEM002 | 1. Open the Mượn/Trả tab -> 2. Find the "Kiểm tra quá hạn" button | MEM002 | No "Kiểm tra quá hạn" button exists in the interface | REQ-06 | EP |
 | TC-45 | Create member successfully with all valid data (DT-R1) | Reset. Log in as LIB001 | 1. Open the Thành viên tab -> 2. Click "Thêm" -> 3. Fill in the form -> 4. Submit | Name: Nguyen Van A / Email: newuser@domain.com / Phone: 0987654321 | Creation succeeds. The member appears in the list | REQ-07 | DT |
 | TC-46 | Member cannot add a member (DT-R2) | Reset. Log in as MEM002 | 1. Find the Thành viên tab or add function -> 2. Observe | ba.nguyen@email.com (MEM002) | The "Thành viên" tab is not visible or access is denied | REQ-07 | DT, EP |
@@ -256,7 +258,7 @@
 | Search Books | 6 | REQ-03 | EP |
 | Borrow Book | 11 | REQ-04 | DT, BVA, EP |
 | Return Book | 9 | REQ-05 | DT, BVA, EP |
-| Overdue Handling | 8 | REQ-06 | DT, BVA, EP |
-| Member Management | 8 | REQ-07 | DT, EP |
+| Overdue Handling | 9 | REQ-06 | DT, BVA, EP |
+| Member Management | 9 | REQ-07 | DT, EP |
 | Borrow Record Lookup | 9 | REQ-08 | DT, EP |
-| **Total** | **61** | REQ-01 -> REQ-08 | EP, BVA, DT |
+| **Total** | **63** | REQ-01 -> REQ-08 | EP, BVA, DT |
