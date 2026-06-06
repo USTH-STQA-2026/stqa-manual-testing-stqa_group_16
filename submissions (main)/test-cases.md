@@ -4,7 +4,7 @@
 |----------------|---------------------|
 | **Group**      | STQA_Group_16       |
 | **Created On** |                     |
-| **System**     | https://stqa.rbc.vn |
+| **System**     | <https://stqa.rbc.vn> |
 | **Reference**  | SRS v1.0            |
 
 ---
@@ -15,8 +15,8 @@
 
 | Characteristic | Block | Representative Value | Expected Result |
 |---------------------------|-------------------|--------------------------|------------------|
-| Email exists | Yes | librarian@library.com | Login succeeds |
-| Email exists | No | nobody@test.com | Show "Khong tim thay thanh vien" |
+| Email exists | Yes | <librarian@library.com> | Login succeeds |
+| Email exists | No | <nobody@test.com> | Show "Khong tim thay thanh vien" |
 | Password | Correct | admin123, password123 | Login succeeds |
 | Password | Incorrect | wrongpassword | Show "Mat khau khong dung" |
 | Missing input | Empty | | Show "Vui long nhap email va mat khau" |
@@ -25,8 +25,8 @@
 
 | Characteristic | Block | Representative Value | Expected Result |
 |---------------------------|-------------------|--------------------------|------------------|
-| User role | Librarian | librarian@library.com | Can view the full list of 20 books |
-| User role | Member | dam.tran@email.com | Can view the full list of 20 books |
+| User role | Librarian | <librarian@library.com> | Can view the full list of 20 books |
+| User role | Member | <dam.tran@email.com> | Can view the full list of 20 books |
 | Displayed book status | Có sẵn | BOOK001 "Lập trình Flutter cơ bản" | Display status "Có sẵn" |
 | Displayed book status | Đã mượn | BOOK003 "Kiểm thử phần mềm nhập môn" | Display status "Đã mượn" |
 | Displayed book status | Thất lạc | BOOK007 "Kinh tế vi mô" | Display status "Thất lạc" |
@@ -48,12 +48,12 @@
 | Book status | Có sẵn | BOOK001 "Lập trình Flutter cơ bản" | Allow borrowing |
 | Book status | Đang mượn | BOOK003 "Kiểm thử phần mềm nhập môn" (borrowed by MEM002) | Reject borrowing |
 | Book status | Thất lạc | BOOK020 "Dẫn luận ngôn ngữ học" | Reject borrowing |
-| Member status | Hoạt động | MEM002 ba.nguyen@email.com | Allow borrowing if the member has fewer than 3 books |
-| Member status | Tạm ngưng | MEM004 cu.le@email.com | Reject and show the suspended-account message |
-| Member status | Hết hạn | MEM005 binh.pham@email.com | Reject and show the expired-account message |
-| Number of borrowed books (BVA) | 0 books (BVA min) | MEM003 dam.tran@email.com — 0 active borrow records | Allow borrowing |
-| Number of borrowed books (BVA) | 1 book (BVA middle) | MEM002 ba.nguyen@email.com — BR001 is active | Allow borrowing |
-| Number of borrowed books (BVA) | 2 books (BVA limit - 1) | MEM006 biet.hoang@email.com — borrow one more book to reach 2 | Allow borrowing |
+| Member status | Hoạt động | MEM002 <ba.nguyen@email.com> | Allow borrowing if the member has fewer than 3 books |
+| Member status | Tạm ngưng | MEM004 <cu.le@email.com> | Reject and show the suspended-account message |
+| Member status | Hết hạn | MEM005 <binh.pham@email.com> | Reject and show the expired-account message |
+| Number of borrowed books (BVA) | 0 books (BVA min) | MEM003 <dam.tran@email.com> — 0 active borrow records | Allow borrowing |
+| Number of borrowed books (BVA) | 1 book (BVA middle) | MEM002 <ba.nguyen@email.com> — BR001 is active | Allow borrowing |
+| Number of borrowed books (BVA) | 2 books (BVA limit - 1) | MEM006 <biet.hoang@email.com> — borrow one more book to reach 2 | Allow borrowing |
 | Number of borrowed books (BVA) | 3 books (BVA at limit - mutant) | MEM006 after borrowing 3 books | Reject and show a limit-exceeded message |
 | Borrow duration | Automatically calculated, 14 days | Borrow date + 14 days | Due date = borrow date + 14 days |
 
@@ -76,14 +76,14 @@
 
 | Characteristic | Block | Representative Value | Expected Result |
 |---------------------------|-------------------|--------------------------|------------------|
-| User who runs the check | Librarian | librarian@library.com (LIB001) | Can click "Kiểm tra quá hạn" |
-| User who runs the check | Member | ba.nguyen@email.com (MEM002) | No button or access denied |
+| User who runs the check | Librarian | <librarian@library.com> (LIB001) | Can click "Kiểm tra quá hạn" |
+| User who runs the check | Member | <ba.nguyen@email.com> (MEM002) | No button or access denied |
 | dueDate versus currentDate | dueDate < currentDate | BR001: due 15/09/2024 < 19/05/2026 | Mark as "Quá hạn" |
 | dueDate versus currentDate | dueDate = currentDate | Assumed record due today | Mark as "Quá hạn" (SRS: <= today) |
 | dueDate versus currentDate | dueDate > currentDate | New record created after reset with a future due date | Do not mark overdue |
 | Permission to view overdue list | Librarian | LIB001 | View all overdue records |
 | Permission to view overdue list | Member with an overdue record | MEM002 (BR001 overdue) | View only own record |
-| Permission to view overdue list | Member without an overdue record | MEM003 dam.tran@email.com | Show no overdue records |
+| Permission to view overdue list | Member without an overdue record | MEM003 <dam.tran@email.com> | Show no overdue records |
 | Overdue record owner | Current member | MEM006 views own BR003 | Allow viewing |
 | Overdue record owner | Another member | MEM006 tries to view BR001 owned by MEM002 | Do not allow viewing |
 
@@ -91,16 +91,16 @@
 
 | Characteristic | Block | Representative Value | Expected Result |
 |---------------------------|-------------------|--------------------------|------------------|
-| User role | Librarian | librarian@library.com | Allow adding a member |
-| User role | Member | ba.nguyen@email.com | Deny access to the "Thành viên" tab |
+| User role | Librarian | <librarian@library.com> | Allow adding a member |
+| User role | Member | <ba.nguyen@email.com> | Deny access to the "Thành viên" tab |
 | Full name | Valid | Nguyen Van A | Accept |
 | Full name | Empty | | Reject and show an error |
-| Email format | Valid (@ + . domain) | newuser@domain.com | Accept |
+| Email format | Valid (@ + . domain) | <newuser@domain.com> | Accept |
 | Email format | Missing @ | newuserdomain.com | Reject with an invalid email message |
 | Email format | Missing . in domain | newuser@domain | Reject with an invalid email message |
 | Email format | Empty | | Reject with an invalid email message |
-| Email existence | Not yet used | newuser@domain.com | Allow creation |
-| Email existence | Already used | dam.tran@email.com | Reject with a duplicate email message |
+| Email existence | Not yet used | <newuser@domain.com> | Allow creation |
+| Email existence | Already used | <dam.tran@email.com> | Reject with a duplicate email message |
 | Phone number | Valid | 0987654321 | Accept |
 | Phone number | Empty | | Reject and show an error |
 
@@ -108,8 +108,8 @@
 
 | Characteristic | Block | Representative Value | Expected Result |
 |---------------------------|-------------------|--------------------------|------------------|
-| User role | Librarian | librarian@library.com | View all 5 records (BR001 -> BR005) |
-| User role | Member | ba.nguyen@email.com (MEM002) | View only BR001 and BR004 |
+| User role | Librarian | <librarian@library.com> | View all 5 records (BR001 -> BR005) |
+| User role | Member | <ba.nguyen@email.com> (MEM002) | View only BR001 and BR004 |
 | Record ownership | Own record | MEM006 views BR003 | Allow viewing |
 | Record ownership | Another member's record | MEM006 tries to view BR004 owned by MEM002 | Deny access |
 | Record exists | Exists | BR003 | Display record details |
@@ -120,21 +120,29 @@
 | Member borrowing history | Has records | MEM002 (BR001 active, BR004 returned) | Show the list |
 | Member borrowing history | No records | Newly created member from TC-43 | Show an empty list |
 
+# The happy path + negative + boundary (REQ_01)
+
+![](Screenshot/graph-1.png)
+
 ### Decision Table — Borrow Book (REQ-04)
 
-| Condition \ Action | R1 | R2 | R3 | R4 | R5 |
-|-----------------------|----|----|----|----|----|
-| Book is available? | Y | N | Y | Y | Y |
-| Member is active? | Y | Y | N | N | Y |
-| Member status is suspended? | N | N | Y | N | N |
-| Member status is expired? | N | N | N | Y | N |
-| Number of borrowed books < 3? | Y | Y | Y | Y | N |
-| Allow borrowing | X | | | | |
-| Reject: book unavailable | | X | | | |
-| Reject: member suspended | | | X | | |
-| Reject: member expired | | | | X | |
-| Reject: limit exceeded | | | | | X |
-| Create due date +14 days | X | | | | |
+| Condition / Action            | R1 | R2 | R3 | R4 | R5 |
+|-------------------------------|----|----|----|----|----|
+| Book is available?            | Y  | N  | Y  | Y  | Y  |
+| Member is active?             | Y  | Y  | N  | N  | Y  |
+| Member status is suspended?   | N  | N  | Y  | N  | N  |
+| Member status is expired?     | N  | N  | N  | Y  | N  |
+| Number of borrowed books < 3? | Y  | Y  | Y  | Y  | N  |
+| Allow borrowing               | X  |    |    |    |    |
+| Reject: book unavailable      |    | X  |    |    |    |
+| Reject: member suspended      |    |    | X  |    |    |
+| Reject: member expired        |    |    |    | X  |    |
+| Reject: limit exceeded        |    |    |    |    | X  |
+| Create due date +14 days      | X  |    |    |    |    |
+
+# The happy path + negative + boundary (REQ_04)
+
+![](Screenshot/graph-4.png)
 
 ### Decision Table — Return Book (REQ-05)
 
@@ -146,6 +154,10 @@
 | Returned on time? | Y | Y | Y | Y | N |
 | Book status changes to "Có sẵn" | X | | | | X |
 | System shows overdue warning | | | | | X |
+
+# The happy path + negative + boundary (REQ_05)
+
+![](Screenshot/graph-5.png)
 
 ### Decision Table — Overdue Handling (REQ-06)
 
@@ -178,7 +190,7 @@
 | Result | ✔ | ✔ | ✖ | ✖ |
 
 ---
- 
+
 ## Step 2: Test Cases
 
 ### Summary
@@ -291,4 +303,10 @@
 | TC-60 | Member with borrowing history sees record list | Reset. Log in as MEM002 | 1. Open the Mượn/Trả tab -> 2. Observe | MEM002 (BR001 Đang mượn + BR004 Đã trả) | Show the record list (BR001, BR004) | EP |
 | TC-61 | Record information shows all required fields | Reset. Log in as LIB001 | 1. Open the Mượn/Trả tab -> 2. View BR003 details | BR003 (MEM006, BOOK013, borrowed 01/10/2024, due 15/10/2024) | Show Record ID, Book, Borrow Date, Due Date, and Status | EP |
 
+## Notes
+
+- TestCase (Bonus-Bug): TC-16 ,TC-41,TC-43
+- These bugs were not covered by the 8 specific requirements; they were detected during live testing while cross-checking with the SRS. Consequently, we proposed 3 extra test cases
+
+## Summary
 
