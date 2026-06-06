@@ -6,29 +6,27 @@
 | **Report Date**  | 04/06/2026    |
 
 ---
-
-## BUG-01
-
-| Attribute           | Details        |
-|---------------------|----------------|
-| **Bug ID**          | BUG-01         |
-| **Related TC**      | TC-10          |
-| **Related REQ**     | REQ-02         |
-| **Severity**        | Low — the displayed status label violates REQ-02 but does not lose data or block a core flow |
-| **Reporter**        | STQA_Group_16  |
-| **Found On**        | 20/05/2026     |
-| **Status**          | Open           |
-
-**Title:**
-BOOK003 displays status "Đang mượn" instead of "Đã mượn"
-
 **Environment:**
 - Browser: Chromium/Chrome
 - Operating System: Linux
 - Interface Language: Vietnamese
 
+## BUG-01 — Book status displayed incorrectly
+| Attribute           | Details        |
+|---------------------|----------------|
+| **Bug ID**          | BUG-01         |
+| **Related REQ**     | REQ-02         |
+| **Related TC**      | TC-10          |
+| **Severity**        | Low            |
+| **Reporter**        | STQA_Group_16  |
+| **Found On**        | 20/05/2026     |
+| **Status**          | Open           |
+
+**Description:**
+BOOK003 displays status "Đang mượn" instead of "Đã mượn"
+
 **Preconditions:**
-Reset. Log in with a valid account
+Reset system. Log in with a random valid account
 
 **Steps to Reproduce:**
 1. Open the Sách tab.
@@ -52,31 +50,26 @@ Standardize the displayed status label for borrowed books to "Đã mượn" in t
 
 ---
 
-## BUG-02
+## BUG-02 — Category filter is case-sensitive
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-02         |
-| **Related TC**      | TC-14          |
 | **Related REQ**     | REQ-03         |
-| **Severity**        | Medium — the category filter returns no results for valid input with different letter case |
+| **Related TC**      | TC-14          |
+| **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
+**Description:** 
 Category filter returns no Công Nghệ books when the keyword uses different letter case
 
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
-
 **Preconditions:**
-Reset. Log in with a valid account
+Reset system. Log in with a random valid account
 
 **Steps to Reproduce:**
-1. Open the book search/filter function.
+1. Open the Sách tab.
 2. Select or enter a category in "Lọc".
 3. Enter keyword `công nghệ` or `CÔNG NGHỆ`.
 4. Observe the result list.
@@ -85,7 +78,7 @@ Reset. Log in with a valid account
 Show books in category "Công Nghệ"
 
 **Actual Result:**
-Does not show the list for the searched category
+No books are displayed for the selected category.
 
 **Impact:**
 Users cannot filter books by category when valid input uses a different letter case from the displayed data, reducing book lookup usefulness.
@@ -99,38 +92,33 @@ Check the category filtering logic and normalize matching for case-insensitive c
 
 ---
 
-## BUG-03
+## BUG-03 — Wrong suggested keywords in English interface
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-03         |
-| **Related TC**      | TC-16          |
 | **Related REQ**     | REQ-03         |
-| **Severity**        | Medium — category filtering does not work correctly after switching the interface to English |
+| **Related TC**      | TC-16          |
+| **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
+**Description:**
 Filter by Category returns no results for the suggested English keywords
 
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: English after switching from Vietnamese
-
 **Preconditions:**
-Reset. Log in with a valid account
+Reset system. Log in with a random valid account.
 
 **Steps to Reproduce:**
 1. Switch the interface from Vietnamese to English.
-2. Select the Book tab.
+2. Open the Sách tab.
 3. Open Filter.
 4. Enter a Filter by Category suggestion: `Technology` or `Economics`.
 5. Observe the result.
 
 **Expected Result:**
-Show book information for keyword : Technology , Economics
+Display books in the Technology or Economics category.
 
 **Actual Result:**
 Does not show book information when searching in Filter by Category
@@ -147,28 +135,23 @@ Align category filter values with translated labels and map English keywords to 
 
 ---
 
-## BUG-04
+## BUG-04 — Member status displayed incorrectly
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-04         |
-| **Related TC**      | TC-22          |
 | **Related REQ**     | REQ-04         |
-| **Severity**        | Medium — borrowing is rejected but the account-status reason is wrong |
+| **Related TC**      | TC-22          |
+| **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
-Suspended account is reported as expired when borrowing a book
-
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
+**Description:**
+"Suspended" account is reported as "expired" when borrowing a book
 
 **Preconditions:**
-Reset. Log in as MEM004
+Reset system. Log in as MEM004.
 
 **Steps to Reproduce:**
 1. Log in as `MEM004`.
@@ -193,28 +176,23 @@ Check the member-status branch used for borrow rejection and show the suspended-
 
 ---
 
-## BUG-05
+## BUG-05 — Exceeding borrow book limit
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-05         |
-| **Related TC**      | TC-24          |
 | **Related REQ**     | REQ-04         |
-| **Severity**        | High — violates the maximum 3-book borrow limit in REQ-04 |
+| **Related TC**      | TC-24          |
+| **Severity**        | High           |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
-MEM006 can still borrow after reaching the 3-book limit
-
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
+**Description:**
+MEM006 can still borrow after reaching the 3-book limit (borrow 4 books)
 
 **Preconditions:**
-Reset. Log in as MEM006. Borrow two more books to reach 3
+Reset system. Log in as MEM006.
 
 **Steps to Reproduce:**
 1. Log in as `MEM006`.
@@ -239,28 +217,23 @@ Check active borrow record count before creating a new record; when the count re
 
 ---
 
-## BUG-06
+## BUG-06 — Lack of overdue warning while returning
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-06         |
-| **Related TC**      | TC-30          |
 | **Related REQ**     | REQ-05         |
-| **Severity**        | Medium — overdue return succeeds without the REQ-05 warning |
+| **Related TC**      | TC-30          |
+| **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
+**Description:**
 Returning overdue BR001 shows no overdue warning
 
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
-
 **Preconditions:**
-Reset. Log in as MEM002
+Reset system. Log in as MEM002.
 
 **Steps to Reproduce:**
 1. Log in as `MEM002`.
@@ -285,28 +258,23 @@ After detecting a return date after the due date, keep processing the return but
 
 ---
 
-## BUG-07
+## BUG-07 — Unauthorized return of another member's book
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-07         |
-| **Related TC**      | TC-36          |
 | **Related REQ**     | REQ-05         |
-| **Severity**        | High — a member can return another member's book, affecting return authorization and borrow record data |
+| **Related TC**      | TC-36          |
+| **Severity**        | High           |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
-MEM006 can return a book for MEM002 through borrow record lookup
-
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
+**Description:**
+MEM006 can return a book for MEM002 through borrow record lookup, which should not be allowed
 
 **Preconditions:**
-Reset. Log in as MEM006
+Reset system. Log in as MEM006.
 
 **Steps to Reproduce:**
 1. Log in as `MEM006`.
@@ -332,28 +300,23 @@ Check record ownership before the return action and reject the action when the r
 
 ---
 
-## BUG-08
+## BUG-08 — Overdue status not displayed
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-08         |
-| **Related TC**      | TC-39          |
 | **Related REQ**     | REQ-06         |
-| **Severity**        | Medium — a member does not see the correct overdue status for an own record |
+| **Related TC**      | TC-39          |
+| **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
-MEM002 does not see BR001 with status "Quá hạn"
-
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
+**Description:**
+MEM002 does not see BR001 with status "Quá hạn", since borrowed book is already overdue
 
 **Preconditions:**
-Run after TC-35
+Reset system. Excecute TC-35. Log in as MEM002.
 
 **Steps to Reproduce:**
 1. Log in as `MEM002`.
@@ -378,28 +341,23 @@ Synchronize the updated overdue status into the record list shown to the owning 
 
 ---
 
-## BUG-09
+## BUG-09 — Failed to add new member with valid data
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-09         |
-| **Related TC**      | TC-45          |
 | **Related REQ**     | REQ-07         |
-| **Severity**        | Medium — valid data is rejected, so the standard member-creation flow cannot complete |
+| **Related TC**      | TC-45          |
+| **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
+**Description:**
 Adding a member with valid data is rejected as invalid email
 
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
-
 **Preconditions:**
-Reset. Log in as LIB001
+Reset system. Log in as LIB001.
 
 **Steps to Reproduce:**
 1. Log in as `LIB001`.
@@ -424,28 +382,23 @@ Check the email validator for valid cases with `@` and `.` in the domain before 
 
 ---
 
-## BUG-10
+## BUG-10 — Member can be added with invalid data
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-10         |
-| **Related TC**      | TC-49          |
 | **Related REQ**     | REQ-07         |
-| **Severity**        | Medium — invalid email format can still be saved, affecting member data quality |
+| **Related TC**      | TC-49          |
+| **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
-Email missing a dot in the domain can still create a member
-
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
+**Description:**
+Email missing a dot in the domain can still create a member, which is against email rule
 
 **Preconditions:**
-Reset. Log in as LIB001
+Reset system. Log in as LIB001.
 
 **Steps to Reproduce:**
 1. Log in as `LIB001`.
@@ -471,28 +424,23 @@ Require email to contain `@` and a `.` in the domain before allowing member crea
 
 ---
 
-## BUG-11
+## BUG-11 — Wrong warning type in adding new member
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-11         |
-| **Related TC**      | TC-52          |
 | **Related REQ**     | REQ-07         |
-| **Severity**        | Low — the action is rejected but the error message points to the wrong input field |
+| **Related TC**      | TC-52          |
+| **Severity**        | Low            |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
-Empty phone number reports invalid email
-
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
+**Description:**
+Empty phone number reports invalid email instead of invalid phone number
 
 **Preconditions:**
-Reset. Log in as LIB001
+Reset system. Log in as LIB001.
 
 **Steps to Reproduce:**
 1. Log in as `LIB001`.
@@ -517,28 +465,23 @@ Separate empty phone-number validation from email validation and show the phone-
 
 ---
 
-## BUG-12
+## BUG-12 — Member can view another member's borrow record 
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-12         |
-| **Related TC**      | TC-55          |
 | **Related REQ**     | REQ-08         |
-| **Severity**        | High — a member can view another member's borrow record, violating REQ-08 visibility limits |
+| **Related TC**      | TC-55          |
+| **Severity**        | High           |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Title:**
-MEM006 can view BR004 owned by another member
-
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
+**Description:**
+MEM006 can view BR004 owned by another member, violating REQ-08 visibility limits
 
 **Preconditions:**
-Reset. Log in as MEM006
+Reset system. Log in as MEM006.
 
 **Steps to Reproduce:**
 1. Log in as `MEM006`.
@@ -560,33 +503,29 @@ A member can view a borrow record not owned by that member, exposing borrowing i
 **Proposed Fix:**
 Filter borrow records by the logged-in member in both data retrieval and display; only librarians should view records for all members.
 
-## BUG-13
+## BUG-13 — Borrow record incorrectly marked as overdue
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-13         |
-| **Related TC**      | TC-41 (Bonus)  |
 | **Related REQ**     | REQ-07         |
+| **Related TC**      | TC-41 (Bonus)  |
 | **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 01/06/2026     |
 | **Status**          | Open           |
 
-**Title:**
-BR003 of MEM006 show status "Quá hạn"
-
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
+**Description:**
+BR003 of MEM006 is marked as overdue even though the due date has not passed.
 
 **Preconditions:**
-Reset. Login LIB001
+Reset system. Login as LIB001.
 
-**Steps to Reproduce:** <br>
-1.Tab Sách. <br>
-2 Tab Mượn/Trả. <br>
-3 Check book overdate.
+**Steps to Reproduce:**
+1. Log in as LIB001.
+2. Open the Mượn/Trả tab.
+3. Locate borrow record BR003 of MEM006.
+4. Observe the displayed status.
 
 **Expected Result:**
 BR003 of MEM006 show "Đang mượn" ( not overdate ) 
@@ -601,42 +540,40 @@ Affects data accuracy of book status but does not crash the system or block the 
 ![TC-41](Screenshot/TC-41.png)
 
 **Proposed Fix:**
+Review the overdue-status calculation logic and ensure records are marked as overdue only when the current date exceeds the due date.
 
-## BUG-14
+## BUG-14 — Borrow count incorrectly reset to zero
 
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-14         |
-| **Related TC**      | TC-43 (Bonus)  |
 | **Related REQ**     | REQ-06         |
+| **Related TC**      | TC-43 (Bonus)  |
 | **Severity**        | Medium         |
 | **Reporter**        | STQA_Group_16  |
 | **Found On**        | 01/06/2026     |
 | **Status**          | Open           |
 
-**Title:**
-System:  convert status into “Đang mượn: 0 sách” when book isn't returned
-
-**Environment:**
-- Browser: Chromium/Chrome
-- Operating System: Linux
-- Interface Language: Vietnamese
+**Description:**
+The system changes the borrowed-book count to "Đang mượn: 0 sách" even though the book has not been returned.
 
 **Preconditions:**
-MEM002 borrowing, not returned, overdate
+Reset system. Log in as LIB001. 
+MEM002 has an overdue borrowed book that has not been returned.
 
-**Steps to Reproduce:** <br>
-1. Login into account Librarian <br>
-2. Tab “Mượn/Trả” <br>
-3. Click “Kiểm tra sách quá hạn” <br>
-4. Tab “Thành viên” <br>
-5. Lookup MEM002 and check status/quantity of book borrowing
+**Steps to Reproduce:** 
+1. Log in as LIB001.
+2. Open the Mượn/Trả tab.
+3. Click "Kiểm tra sách quá hạn".
+4. Open the Thành viên tab.
+5. Search for MEM002.
+6. Observe the borrowed-book count.
 
 **Expected Result:**
-System still show true quantity of book borrowing of MEM002 is 1 book. Not return into “Đang mượn": 0 sách” when book isn't returned.
+MEM002 should still have 1 borrowed book displayed because the book has not been returned.
 
 **Actual Result:**
-System:  convert status into “Đang mượn: 0 sách” when book isn't returned
+The system displays "Đang mượn: 0 sách" even though the book has not been returned.
 
 **Impact:**
 Causes data inconsistency in member records, directly impacting the librarian's tracking ability, but a workaround (checking book history) exists.
@@ -645,3 +582,4 @@ Causes data inconsistency in member records, directly impacting the librarian's 
 ![TC-43](Screenshot/TC-43.png)
 
 **Proposed Fix:**
+Synchronize member borrowing statistics with borrow-record status updates and recalculate the borrowed-book count after overdue processing.
