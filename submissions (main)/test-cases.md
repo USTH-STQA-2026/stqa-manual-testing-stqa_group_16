@@ -305,8 +305,8 @@
 
 ## Notes
 
-- TestCase (Bonus-Bug): TC-16 ,TC-41,TC-43
+- TestCase (Bonus-Bug): TC-16,TC-41,TC-43
 - These bugs were not covered by the 8 specific requirements; they were detected during live testing while cross-checking with the SRS. Consequently, we proposed 3 extra test cases
 
-## Summary
+
 

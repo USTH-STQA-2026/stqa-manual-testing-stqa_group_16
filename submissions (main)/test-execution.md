@@ -51,7 +51,7 @@
 | TC-44 | REQ-06 — Overdue Handling | No "Kiểm tra quá hạn" button exists in the interface |  | Pass |  |  |
 | TC-46 | REQ-07 — Member Management | The "Thành viên" tab is not visible or access is denied |  | Pass |  |  |
 | TC-47 | REQ-07 — Member Management | Reject and show a full-name error |  | Pass |  |  |
-| TC-48 | REQ-07 — Member Management | Reject and show an invalid email message |  | Pass |  |  |
+| TC-48 | REQ-07 — Member Management | Reject and show an invalid email message |  | Pass |  |  |z
 | TC-50 | REQ-07 — Member Management | Reject and show an invalid email message |  | Pass |  |  |
 | TC-51 | REQ-07 — Member Management | Reject and show a duplicate email message |  | Pass |  |  |
 | TC-53 | REQ-08 — Borrow Record Lookup | Show all 5 records: BR001, BR002, BR003, BR004, BR005 |  | Pass |  |  |
@@ -62,20 +62,20 @@
 | TC-59 | REQ-08 — Borrow Record Lookup | Display status "Quá hạn" |  | Pass |  |  |
 | TC-60 | REQ-08 — Borrow Record Lookup | Show the record list (BR001, BR004) |  | Pass |  |  |
 | TC-61 | REQ-08 — Borrow Record Lookup | Show Record ID, Book, Borrow Date, Due Date, and Status |  | Pass |  |  |
-| TC-24 | REQ-04 — Borrow Book | Reject. Show a message for exceeding the 3-book limit | Borrow succeeds; MEM006 can borrow three more books | Fail | Screenshot/TC-24.png | BUG-05 |
-| TC-39 | REQ-06 — Overdue Handling | BR001 displays status "Quá hạn" for MEM002 | BR001 does not display status "Quá hạn" | Fail | Screenshot/TC-39.png | BUG-08 |
-| TC-41 (Bonus) | REQ-07 — Member Management | BR003 of MEM006 show "Đang mượn" ( no overdate )  | BR003 of MEM006 show status "Quá hạn" | Fail | Screenshot/TC-41.png | BUG-13 |
-| TC-55 | REQ-08 — Borrow Record Lookup | BR004 does not appear in MEM006's interface | Can view another member's borrow record | Fail | Screenshot/TC-55.png | BUG-12 |
-| TC-10 | REQ-02 — View Book List | Display status "Đã mượn" | Display status "Đang mượn" | Fail | Screenshot/TC-10.png | BUG-01 |
-| TC-16 | REQ-03 — Search Books | Show book information for keywords: Technology, Economics | Does not show book information when searching in Filter by Category | Fail | Screenshot/TC-16.png | BUG-03 |
-| TC-14 | REQ-03 — Search Books | Show books in category "Công Nghệ" | Does not show the list for the searched category | Fail | Screenshot/TC-14.png | BUG-02 |
-| TC-49 | REQ-07 — Member Management | Reject and show an invalid email message | Member creation succeeds | Fail | Screenshot/TC-49.png | BUG-10 |
-| TC-45 | REQ-07 — Member Management | Creation succeeds. The member appears in the list | Rejects with an invalid email message | Fail | Screenshot/TC-45.png | BUG-09 |
-| TC-52 | REQ-07 — Member Management | Reject and show a phone-number error | Rejects with an invalid email message | Fail | Screenshot/TC-52.png | BUG-11 |
-| TC-36 | REQ-05 — Return Book | Reject the return | Return succeeds | Fail | Screenshot/TC-36.png | BUG-07 |
-| TC-30 | REQ-05 — Return Book | Return succeeds and an overdue warning is shown | Return succeeds without a warning | Fail | Screenshot/TC-30.png | BUG-06 |
-| TC-22 | REQ-04 — Borrow Book | Reject. Show the suspended-account message instead of the expired-account message | Shows the expired-account message instead of the suspended-account message | Fail | Screenshot/TC-22.png | BUG-04 |
-| TC-43 (Bonus) | REQ-06 — Overdue Handling | Display correct number, status of books | System:  convert status into “Đang mượn: 0 sách” when book isn't returned | Fail | Screenshot/TC-43.png | BUG-14 |
+| TC-24 | REQ-04 — Borrow Book | Reject. Show a message for exceeding the 3-book limit | Borrow succeeds; MEM006 can borrow three more books | Fail | ![TC-24](Screenshot/TC-24.png)| BUG-05 |
+| TC-39 | REQ-06 — Overdue Handling | BR001 displays status "Quá hạn" for MEM002 | BR001 does not display status "Quá hạn" | Fail | ![TC-39](Screenshot/TC-39.png) ![TC-39(2)](Screenshot/TC-39(2).png)| BUG-08 |
+| TC-41 (Bonus) | REQ-07 — Member Management | BR003 of MEM006 show "Đang mượn" ( no overdate )  | BR003 of MEM006 show status "Quá hạn" | Fail | ![TC-41](Screenshot/TC-41.png) | BUG-13 |
+| TC-55 | REQ-08 — Borrow Record Lookup | BR004 does not appear in MEM006's interface | Can view another member's borrow record | Fail | ![TC-55](Screenshot/TC-55.png)| BUG-12 |
+| TC-10 | REQ-02 — View Book List | Display status "Đã mượn" | Display status "Đang mượn" | Fail | ![TC-10](Screenshot/TC-10.png) | BUG-01 |
+| TC-16 (Bonus) | REQ-03 — Search Books | Show book information for keywords: Technology, Economics | Does not show book information when searching in Filter by Category | Fail | ![TC-16](Screenshot/TC-16.png) ![TC-16(2)](Screenshot/TC-16(2).png) | BUG-03 |
+| TC-14 | REQ-03 — Search Books | Show books in category "Công Nghệ" | Does not show the list for the searched category | Fail | ![TC-14](Screenshot/TC-14.png)  ![TC-14(2)](Screenshot/TC-14(2).png)    | BUG-02 |
+| TC-49 | REQ-07 — Member Management | Reject and show an invalid email message | Member creation succeeds | Fail |![TC-49](Screenshot/TC-49.png) ![TC-49(2)](Screenshot/TC-49(2).png)| BUG-10 |
+| TC-45 | REQ-07 — Member Management | Creation succeeds. The member appears in the list | Rejects with an invalid email message | Fail |![TC-45](Screenshot/TC-45.png) | BUG-09 |
+| TC-52 | REQ-07 — Member Management | Reject and show a phone-number error | Rejects with an invalid email message | Fail | ![TC-52](Screenshot/TC-52.png) | BUG-11 |
+| TC-36 | REQ-05 — Return Book | Reject the return | Return succeeds | Fail | ![TC-36](Screenshot/TC-36.png)  ![TC-36(2)](Screenshot/TC-36(2).png)| BUG-07 |
+| TC-30 | REQ-05 — Return Book | Return succeeds and an overdue warning is shown | Return succeeds without a warning | Fail | ![TC-30](Screenshot/TC-30.png) | BUG-06 |
+| TC-22 | REQ-04 — Borrow Book | Reject. Show the suspended-account message instead of the expired-account message | Shows the expired-account message instead of the suspended-account message | Fail |![TC-22](Screenshot/TC-22.png)| BUG-04 |
+| TC-43 (Bonus) | REQ-06 — Overdue Handling | Display correct number, status of books | System:  convert status into “Đang mượn: 0 sách” when book isn't returned | Fail | ![TC-43](Screenshot/TC-43.png) | BUG-14 |
 
 ---
 
@@ -89,6 +89,11 @@
 | Blocked           | 0       |
 | Not Run           | 0       |
 | **Pass Rate**     | 77.8%  |
+
+## Notes
+
+- TestCase (Bonus-Bug): TC-16,TC-41,TC-43
+- These bugs were not covered by the 8 specific requirements; they were detected during live testing while cross-checking with the SRS. Consequently, we proposed 3 extra test cases
 
 ### Results by Functional Area
 

@@ -9,8 +9,6 @@
 | **Report Date**       | 04/06/2026                 |
 | **System Under Test** | https://stqa.rbc.vn — v1.0 |
 
----
-
 ## 2. Result Overview
 
 | Metric               | Value   |
@@ -22,6 +20,11 @@
 | Not Run              | 0       |
 | **Pass Rate**        | 77.8%   |
 | **Bugs Found**       | 22.2%   |
+
+## Notes
+ **Test Case (Bonus-Bug): TC-16, TC-41, TC-43**
+
+The test cases covering the 8 specific requirements identified a total of 11 bugs. In addition, the bugs associated with TC-16, TC-41, and TC-43 were not covered by these requirements. They were discovered during live testing while cross-checking the system's behavior against the Software Requirements Specification (SRS). Consequently, we proposed three additional test cases to document and verify these defects.
 
 ### Distribution by Functional Area
 

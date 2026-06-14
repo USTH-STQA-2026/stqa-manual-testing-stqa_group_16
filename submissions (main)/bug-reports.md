@@ -7,11 +7,13 @@
 
 ---
 **Environment:**
+
 - Browser: Chromium/Chrome
 - Operating System: Linux
 - Interface Language: Vietnamese
 
 ## BUG-01 — Book status displayed incorrectly
+
 | Attribute           | Details        |
 |---------------------|----------------|
 | **Bug ID**          | BUG-01         |
@@ -29,6 +31,7 @@ BOOK003 displays status "Đang mượn" instead of "Đã mượn"
 Reset system. Log in with a random valid account
 
 **Steps to Reproduce:**
+
 1. Open the Sách tab.
 2. Find `BOOK003`.
 3. Observe the book status.
@@ -62,13 +65,14 @@ Standardize the displayed status label for borrowed books to "Đã mượn" in t
 | **Found On**        | 20/05/2026     |
 | **Status**          | Open           |
 
-**Description:** 
+**Description:**
 Category filter returns no Công Nghệ books when the keyword uses different letter case
 
 **Preconditions:**
 Reset system. Log in with a random valid account
 
 **Steps to Reproduce:**
+
 1. Open the Sách tab.
 2. Select or enter a category in "Lọc".
 3. Enter keyword `công nghệ` or `CÔNG NGHỆ`.
@@ -84,7 +88,7 @@ No books are displayed for the selected category.
 Users cannot filter books by category when valid input uses a different letter case from the displayed data, reducing book lookup usefulness.
 
 **Evidence:**
-![TC-14](Screenshot/TC-14.png) 
+![TC-14](Screenshot/TC-14.png)
 ![TC-14(2)](Screenshot/TC-14(2).png)
 
 **Proposed Fix:**
@@ -111,6 +115,7 @@ Filter by Category returns no results for the suggested English keywords
 Reset system. Log in with a random valid account.
 
 **Steps to Reproduce:**
+
 1. Switch the interface from Vietnamese to English.
 2. Open the Sách tab.
 3. Open Filter.
@@ -127,7 +132,7 @@ Does not show book information when searching in Filter by Category
 Users of the English interface get no category-filter results from keywords suggested by the interface, making the filter difficult to use.
 
 **Evidence:**
-![TC-16](Screenshot/TC-16.png) 
+![TC-16](Screenshot/TC-16.png)
 ![TC-16(2)](Screenshot/TC-16(2).png)
 
 **Proposed Fix:**
@@ -154,6 +159,7 @@ Align category filter values with translated labels and map English keywords to 
 Reset system. Log in as MEM004.
 
 **Steps to Reproduce:**
+
 1. Log in as `MEM004`.
 2. Open the Sách tab.
 3. Select `BOOK001`.
@@ -195,6 +201,7 @@ MEM006 can still borrow after reaching the 3-book limit (borrow 4 books)
 Reset system. Log in as MEM006.
 
 **Steps to Reproduce:**
+
 1. Log in as `MEM006`.
 2. Borrow two more books so the account has 3 borrowed books.
 3. Select `BOOK001`.
@@ -236,6 +243,7 @@ Returning overdue BR001 shows no overdue warning
 Reset system. Log in as MEM002.
 
 **Steps to Reproduce:**
+
 1. Log in as `MEM002`.
 2. Open the Mượn/Trả tab.
 3. Select `BR001` with a return date after due date `15/09/2024`.
@@ -277,6 +285,7 @@ MEM006 can return a book for MEM002 through borrow record lookup, which should n
 Reset system. Log in as MEM006.
 
 **Steps to Reproduce:**
+
 1. Log in as `MEM006`.
 2. Open Tra cứu phiếu mượn.
 3. Look up active member `MEM002`.
@@ -319,6 +328,7 @@ MEM002 does not see BR001 with status "Quá hạn", since borrowed book is alrea
 Reset system. Excecute TC-35. Log in as MEM002.
 
 **Steps to Reproduce:**
+
 1. Log in as `MEM002`.
 2. Open the Mượn/Trả tab.
 3. Observe `BR001`.
@@ -360,6 +370,7 @@ Adding a member with valid data is rejected as invalid email
 Reset system. Log in as LIB001.
 
 **Steps to Reproduce:**
+
 1. Log in as `LIB001`.
 2. Open the Thành viên tab and click "Thêm".
 3. Enter Name `Nguyen Van A`, Email `newuser@domain.com`, Phone `0987654321`.
@@ -401,6 +412,7 @@ Email missing a dot in the domain can still create a member, which is against em
 Reset system. Log in as LIB001.
 
 **Steps to Reproduce:**
+
 1. Log in as `LIB001`.
 2. Open the add member function.
 3. Enter Name `Nguyen Van A`, Email `newuser@domain`, Phone `0987654321`.
@@ -443,6 +455,7 @@ Empty phone number reports invalid email instead of invalid phone number
 Reset system. Log in as LIB001.
 
 **Steps to Reproduce:**
+
 1. Log in as `LIB001`.
 2. Open the add member function.
 3. Enter Name `Nguyen Van A`, Email `newuser@domain.com`, and leave Phone empty.
@@ -465,7 +478,7 @@ Separate empty phone-number validation from email validation and show the phone-
 
 ---
 
-## BUG-12 — Member can view another member's borrow record 
+## BUG-12 — Member can view another member's borrow record
 
 | Attribute           | Details        |
 |---------------------|----------------|
@@ -484,6 +497,7 @@ MEM006 can view BR004 owned by another member, violating REQ-08 visibility limit
 Reset system. Log in as MEM006.
 
 **Steps to Reproduce:**
+
 1. Log in as `MEM006`.
 2. Open the Mượn/Trả tab.
 3. Check whether the list contains `BR004` owned by `MEM002`.
@@ -522,13 +536,14 @@ BR003 of MEM006 is marked as overdue even though the due date has not passed.
 Reset system. Login as LIB001.
 
 **Steps to Reproduce:**
+
 1. Log in as LIB001.
 2. Open the Mượn/Trả tab.
 3. Locate borrow record BR003 of MEM006.
 4. Observe the displayed status.
 
 **Expected Result:**
-BR003 of MEM006 show "Đang mượn" ( not overdate ) 
+BR003 of MEM006 show "Đang mượn" ( not overdate )
 
 **Actual Result:**
 BR003 of MEM006 show status "Quá hạn"
@@ -558,10 +573,11 @@ Review the overdue-status calculation logic and ensure records are marked as ove
 The system changes the borrowed-book count to "Đang mượn: 0 sách" even though the book has not been returned.
 
 **Preconditions:**
-Reset system. Log in as LIB001. 
+Reset system. Log in as LIB001.
 MEM002 has an overdue borrowed book that has not been returned.
 
-**Steps to Reproduce:** 
+**Steps to Reproduce:**
+
 1. Log in as LIB001.
 2. Open the Mượn/Trả tab.
 3. Click "Kiểm tra sách quá hạn".
@@ -583,3 +599,8 @@ Causes data inconsistency in member records, directly impacting the librarian's 
 
 **Proposed Fix:**
 Synchronize member borrowing statistics with borrow-record status updates and recalculate the borrowed-book count after overdue processing.
+
+## Notes
+
+- TestCase (Bonus-Bug): TC-16,TC-41,TC-43
+- These bugs were not covered by the 8 specific requirements; they were detected during live testing while cross-checking with the SRS. Consequently, we proposed 3 extra test cases
