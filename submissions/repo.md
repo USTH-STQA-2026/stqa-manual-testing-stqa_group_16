@@ -1,0 +1,1 @@
+https://github.com/USTH-STQA-2026/stqa-manual-testing-stqa_group_16

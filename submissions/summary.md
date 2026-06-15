@@ -1,93 +1,118 @@
-# Test Summary — Báo cáo tổng hợp kiểm thử
+# Test Summary
 
-> **Hướng dẫn**: Đây là hoạt động **Quality Assurance** — bạn đánh giá chất lượng tổng thể của phần mềm, không chỉ liệt kê lỗi.
+## 1. Group Information
 
----
+| Item                  | Information                |
+|-----------------------|----------------------------|
+| **Group**             | STQA_Group_16              |
+| **Class**             | 252ICT2012.L1              |
+| **Report Date**       | 04/06/2026                 |
+| **System Under Test** | https://stqa.rbc.vn — v1.0 |
 
-## 1. Thông tin nhóm
+## 2. Result Overview
 
-| Mục | Thông tin |
-|-----|----------|
-| **Nhóm** | `<!-- Tên nhóm -->` |
-| **Lớp** | `<!-- VD: SE001.P11 -->` |
-| **Ngày báo cáo** | `<!-- DD/MM/YYYY -->` |
-| **Hệ thống kiểm thử** | https://stqa.rbc.vn — v1.0 |
+| Metric               | Value   |
+|----------------------|---------|
+| Total Test Cases     | 63      |
+| Pass                 | 49      |
+| Fail                 | 14      |
+| Blocked              | 0       |
+| Not Run              | 0       |
+| **Pass Rate**        | 77.8%   |
+| **Bugs Found**       | 22.2%   |
 
----
+## Notes
+ **Test Case (Bonus-Bug): TC-16, TC-41, TC-43**
 
-## 2. Tổng quan kết quả
+The test cases covering the 8 specific requirements identified a total of 11 bugs. In addition, the bugs associated with TC-16, TC-41, and TC-43 were not covered by these requirements. They were discovered during live testing while cross-checking the system's behavior against the Software Requirements Specification (SRS). Consequently, we proposed three additional test cases to document and verify these defects.
 
-| Chỉ số | Giá trị |
-|--------|---------|
-| Tổng số test case | `<!-- -->` |
-| Pass | `<!-- -->` |
-| Fail | `<!-- -->` |
-| Blocked | `<!-- -->` |
-| Not Run | `<!-- -->` |
-| **Tỷ lệ Pass** | `<!-- xx% -->` |
-| **Số bug phát hiện** | `<!-- -->` |
+### Distribution by Functional Area
 
-### Phân bổ theo nhóm chức năng
+| Functional Area | TC | Pass | Fail | Bug | Assessment |
+|----------------|----|------|------|-----|----------|
+| REQ-01 — Login | 6 | 6 | 0 | 0 | All executed TCs pass |
+| REQ-02 — View Book List | 4 | 3 | 1 | 1 | Core behavior works; a book status label is still wrong |
+| REQ-03 — Search Books | 6 | 4 | 2 | 2 | Search cases pass; category filtering still has defects |
+| REQ-04 — Borrow Book | 11 | 9 | 2 | 2 | Most cases pass; message and book-limit defects remain |
+| REQ-05 — Return Book | 9 | 7 | 2 | 2 | Overdue warning and return authorization defects remain |
+| REQ-06 — Overdue Handling | 9 | 7 | 2 | 2 | Librarian flow works; member status display still has a defect |
+| REQ-07 — Member Management | 9 | 5 | 4 | 4 | Highest fail count; input validation defects remain |
+| REQ-08 — Borrow Record Lookup | 9 | 8 | 1 | 1 | A member record-visibility defect remains |
 
-| Nhóm chức năng | TC | Pass | Fail | Bug | Đánh giá |
-|---------------|-----|------|------|-----|---------|
-| | | | | | |
+### Bug Distribution by Severity
 
-### Phân bổ bug theo mức độ
-
-| Mức độ | Số lượng | Bug IDs |
-|--------|---------|---------|
-| High | | |
-| Medium | | |
-| Low | | |
-
----
-
-## 3. Kỹ thuật thiết kế đã sử dụng
-
-| Kỹ thuật | Áp dụng cho REQ nào? | Số TC sử dụng | Giải thích cách áp dụng |
-|----------|---------------------|---------------|------------------------|
-| | | | |
+| Severity | Count | Bug IDs |
+|--------|----------|---------|
+| High   | 3        | BUG-05, BUG-07, BUG-12 |
+| Medium | 9        | BUG-02, BUG-03, BUG-04, BUG-06, BUG-08, BUG-09, BUG-10, BUG-13, BUG-14 |
+| Low    | 2        | BUG-01, BUG-11 |
 
 ---
 
-## 4. Phân tích chất lượng phần mềm
+## 3. Test Design Techniques Used
 
-### 4.1. Điểm mạnh
-`<!-- Liệt kê các chức năng hoạt động tốt -->`
-
-### 4.2. Điểm yếu
-`<!-- Liệt kê các vấn đề nghiêm trọng -->`
+| Technique | Applied REQs | TC Count | Application Explanation |
+|----------|----------------------|---------------|-------------------------|
+| EP | REQ-01, REQ-02, REQ-03, REQ-04, REQ-05, REQ-06, REQ-07, REQ-08 | 41 | Splits data and roles into representative valid and invalid partitions, such as login success/failure, book status, valid email, and existing/non-existing borrow records. |
+| BVA | REQ-04, REQ-05, REQ-06 | 9 | Checks business boundaries such as borrowed-book counts around the limit of 3, return timing before/on/after due date, and dueDate versus currentDate. |
+| DT | REQ-04, REQ-05, REQ-06, REQ-07, REQ-08 | 30 | Combines permission, book/member status, record ownership, and valid-data conditions to check each decision rule. |
 
 ---
 
-## 5. Đề xuất ưu tiên sửa lỗi
+## 4. Software Quality Analysis
 
-> 💡 Đây là phần **Quality Assurance**: bạn không chỉ tìm lỗi mà còn **đề xuất thứ tự ưu tiên** sửa chữa và đánh giá tác động.
-> Nêu rõ tiêu chí ưu tiên: dựa vào **severity** (mức độ nghiêm trọng kỹ thuật) và/hoặc **priority** (mức độ ưu tiên kinh doanh).
+### 4.1. Strengths
 
-| Thứ tự | Bug | Mức độ | Lý do ưu tiên |
+- All 63 test cases were executed; no test case is Blocked or Not Run.
+- REQ-01 passes 6/6 TCs. The main flows in REQ-04, REQ-06, and REQ-08 also pass most executed TCs.
+- The test set covers valid data, invalid data, boundaries, and permission/status rules through EP, BVA, and Decision Tables.
+
+### 4.2. Weaknesses
+
+- 14 of 63 TCs fail. REQ-07 has the largest concentration with 3 member-data validation bugs.
+- Authorization defects in borrow record and return flows need attention: a member can return another member's book and view another member's record.
+- Several statuses or messages do not meet the requirements, including book status, borrow rejection reason, overdue warning, and overdue status shown to members.
+- Category filtering still fails for different letter case and for English keywords after language switching.
+
+---
+
+## 5. Proposed Fix Priority
+
+| Order | Bug | Severity | Priority Rationale |
 |--------|-----|--------|---------------|
-| | | | |
+| 1 | BUG-07 | High | A member can return another member's book and change borrow record data without authorization. |
+| 2 | BUG-12 | High | A member can view another member's borrow record, violating REQ-08 visibility rules. |
+| 3 | BUG-05 | High | The system allows borrowing beyond the 3-book limit in REQ-04. |
+| 4 | BUG-09 | Medium | Valid data is rejected in the standard member-creation flow. |
+| 5 | BUG-10 | Medium | Invalid email data can be saved, affecting member data quality. |
+| 6 | BUG-06 | Medium | An overdue return is missing the overdue warning. |
+| 7 | BUG-08 | Medium | A member does not see the correct overdue status for an own record. |
+| 8 | BUG-04 | Medium | The system reports the wrong reason when a suspended account is denied borrowing. |
+| 9 | BUG-02 | Medium | Category filtering returns no results for valid keywords with different letter case. |
+| 10 | BUG-03 | Medium | Filter by Category returns no results for suggested English keywords after language switching. |
+| 11 | BUG-13 | Medium | Affects data accuracy of book status but does not crash the system or block the main return workflow. |
+| 12 | BUG-14 | Medium | Causes data inconsistency in member records, directly impacting the librarian's tracking ability, but a workaround (checking book history) exists. |
+| 13 | BUG-11 | Low | An empty phone number shows an error for the wrong field while the action is still rejected. |
+| 14 | BUG-01 | Low | A book status label does not match REQ-02 but does not block a core flow. |
 
 ---
 
-## 6. Kết luận
+## 6. Conclusion
 
-`<!-- Đánh giá tổng thể: Hệ thống có sẵn sàng phát hành không? Tại sao? -->`
-
----
-
-## 7. Bài học rút ra (Tùy chọn)
-
-`<!-- Nhóm bạn học được gì từ quá trình kiểm thử này? -->`
+The test execution reaches an 77.6% pass rate with 49 of 63 TCs passing. The system satisfies most executed test cases for login, borrowing, overdue handling, and borrow record lookup, but the borrow/return and member-management flows should not be treated as stable until the authorization, borrow-limit, and validation defects above are addressed.
 
 ---
 
-## 8. Khai báo sử dụng AI (Tùy chọn)
+## 7. Lessons Learned (Optional)
 
-> Nếu nhóm có sử dụng công cụ AI (ChatGPT, Copilot, Gemini...), hãy ghi rõ bên dưới. Khai báo trung thực **không ảnh hưởng điểm** — đây là kỹ năng minh bạch trong nghề.
+- Comparing expected results with the SRS helps distinguish UI defects, business-rule defects, and authorization defects.
+- EP, BVA, and Decision Tables complement one another: EP covers data classes, BVA exposes limit defects, and DT clarifies multi-condition rules.
+- Recording actual results when a TC fails makes the bug report traceable from test case to defect.
 
-| Công cụ AI | Dùng cho phần nào | Bạn đã kiểm tra/chỉnh sửa thế nào |
+---
+
+## 8. AI Usage Declaration (Optional)
+
+| AI Tool | Used For | Verification and Edits |
 |------------|-------------------|-----------------------------------|
-| | | |
+| Codex | Reviewing and completing `bug-reports.md` and `summary.md` from existing documents (excel team works together)| Cross-checked against `test-cases.md`, `test-execution.md`, and the SRS; evidence fields remain blank for the group to add later |

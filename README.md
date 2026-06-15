@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/WBjeZ6BC)
 # STQA Library Manual Testing — Starter Template
 
 Bài tập thực hành **Kiểm thử thủ công (Manual Testing)** cho môn **Kiểm thử và Đảm bảo chất lượng phần mềm (STQA)**.
@@ -13,18 +14,20 @@ Hệ thống cần kiểm thử: **Quản lý mượn sách Thư viện ABC** �
 
 > **⚠️ Sinh viên: Điền thông tin nhóm vào bảng dưới đây trước khi nộp bài.**
 
-| | Thông tin |
-|---|---|
-| **Tên nhóm** | `<!-- VD: Nhóm 1 -->` |
-| **Lớp** | `<!-- VD: SE001.P11 -->` |
-| **Học kỳ** | `<!-- VD: HK2 2025-2026 -->` |
+|              | Thông tin     |
+|--------------|---------------|
+| **Tên nhóm** | STQA_Group_16 |
+| **Lớp**      | 252ICT2012.L1 |
+| **Học kỳ**   | HK2 2025-2026 |
 
-| # | MSSV | Họ và tên | Vai trò |
-|---|------|-----------|---------|
-| 1 | | | Nhóm trưởng |
-| 2 | | | Thành viên |
-| 3 | | | Thành viên |
-| 4 | | | Thành viên |
+|   | MSSV      | Họ và tên               | Vai trò     |
+|---|-----------|-------------------------|-------------|
+| 1 | 23BA14028 |Vũ Minh Châu            | Nhóm trưởng |
+| 2 | 23BA14184 | Nguyễn Minh Lương       | Thành viên  |
+| 3 | 23BA14167 | Trần Thị Khánh Linh     | Thành viên  |
+| 4 | 23BA14008 | Lương Quỳnh Anh         | Thành viên  |
+| 5 | 23BA14183 | Nguyễn Thị Lương        | Thành viên  |
+| 6 | 2410042   | Lê Hiền Anh             | Thành viên  |
 
 ---
 
@@ -41,32 +44,32 @@ Yêu cầu phần mềm được ghi nhận trong tài liệu **SRS (Software Re
 
 ### Những ai liên quan? (*Who are the stakeholders?*)
 
-| Vai trò | Ai? | Làm gì? |
-|---------|-----|---------|
-| **Khách hàng** (*Customer*) | Thư viện ABC | Đưa ra yêu cầu nghiệp vụ ([BRD](docs/BRD-yeu-cau-nghiep-vu.md)) → BA viết [SRS](docs/SRS-library-system.md) |
-| **Đội phát triển** (*Dev Team*) | Nhóm lập trình | Xây dựng hệ thống theo SRS |
-| **Tester / QC** (*Quality Control*) | **Bạn — sinh viên** | Kiểm thử hệ thống, tìm lỗi, báo cáo |
-| **QA Lead** | Giảng viên / Hướng dẫn | Review kết quả, đánh giá chất lượng |
-| **Người dùng cuối** (*End User*) | Thủ thư + Thành viên thư viện | Sử dụng hệ thống hàng ngày |
+| Vai trò                             | Ai?                           | Làm gì?                                                                                                     |
+|-------------------------------------|-------------------------------|-------------------------------------------------------------------------------------------------------------|
+| **Khách hàng** (*Customer*)         | Thư viện ABC                  | Đưa ra yêu cầu nghiệp vụ ([BRD](docs/BRD-yeu-cau-nghiep-vu.md)) → BA viết [SRS](docs/SRS-library-system.md) |
+| **Đội phát triển** (*Dev Team*)     | Nhóm lập trình                | Xây dựng hệ thống theo SRS                                                                                  |
+| **Tester / QC** (*Quality Control*) | **Bạn — sinh viên**           | Kiểm thử hệ thống, tìm lỗi, báo cáo                                                                         |
+| **QA Lead**                         | Giảng viên / Hướng dẫn        | Review kết quả, đánh giá chất lượng                                                                         |
+| **Người dùng cuối** (*End User*)    | Thủ thư + Thành viên thư viện | Sử dụng hệ thống hàng ngày                                                                                  |
 
-### Tester dựa vào đâu? (*What do you base your testing on?*)
+### Tester dựa vào đâu? (*What do you base your testing on?z*)
 
-| Bạn dựa vào... | Để làm gì... |
-|----------------|-------------|
-| **SRS** (đặc tả yêu cầu) | Biết hệ thống **phải** làm gì → viết **kết quả mong đợi** (expected result) |
-| **Dữ liệu kiểm thử** (test accounts, seed data) | Chuẩn bị **dữ liệu đầu vào** cho từng test case |
-| **Kỹ thuật thiết kế** (EP, BVA, Decision Table) | Quyết định **test bao nhiêu, test những giá trị nào** |
-| **Giao diện hệ thống** (UI thực tế) | Quan sát **kết quả thực tế** (actual result) khi chạy test |
+| Bạn dựa vào...                                  | Để làm gì...                                                                |
+|-------------------------------------------------|-----------------------------------------------------------------------------|
+| **SRS** (đặc tả yêu cầu)                        | Biết hệ thống **phải** làm gì → viết **kết quả mong đợi** (expected result) |
+| **Dữ liệu kiểm thử** (test accounts, seed data) | Chuẩn bị **dữ liệu đầu vào** cho từng test case                             |
+| **Kỹ thuật thiết kế** (EP, BVA, Decision Table) | Quyết định **test bao nhiêu, test những giá trị nào**                       |
+| **Giao diện hệ thống** (UI thực tế)             | Quan sát **kết quả thực tế** (actual result) khi chạy test                  |
 
 ### Software Testing vs Quality Assurance — Khác nhau thế nào?
 
-| | **Software Testing** (Kiểm thử) | **Quality Assurance** (Đảm bảo chất lượng) |
-|--|---|---|
-| **Mục đích** | Tìm lỗi (*defects*) trong sản phẩm | Ngăn ngừa lỗi từ quy trình |
-| **Câu hỏi** | "Phần mềm có lỗi không?" | "Quy trình có giúp tạo phần mềm tốt không?" |
-| **Hoạt động** | Chạy test case, ghi kết quả, báo cáo lỗi | Thiết lập quy trình, review, audit, cải tiến |
-| **Thời điểm** | Sau khi có sản phẩm (reactive) | Từ đầu dự án (proactive) |
-| **Vai trò** | Tester, QC (Quality Control) | QA Engineer, QA Lead |
+|                   | **Software Testing** (Kiểm thử)                              | **Quality Assurance** (Đảm bảo chất lượng)                |
+|-------------------|--------------------------------------------------------------|-----------------------------------------------------------|
+| **Mục đích**      | Tìm lỗi (*defects*) trong sản phẩm                           | Ngăn ngừa lỗi từ quy trình                                |
+| **Câu hỏi**       | "Phần mềm có lỗi không?"                                     | "Quy trình có giúp tạo phần mềm tốt không?"               |
+| **Hoạt động**     | Chạy test case, ghi kết quả, báo cáo lỗi                     | Thiết lập quy trình, review, audit, cải tiến              |
+| **Thời điểm**     | Sau khi có sản phẩm (reactive)                               | Từ đầu dự án (proactive)                                  |
+| **Vai trò**       | Tester, QC (Quality Control)                                 | QA Engineer, QA Lead                                      |
 | **Trong bài này** | ✅ **Bạn đang làm Testing** — viết TC, chạy test, báo cáo bug | ✅ Bạn cũng thực hành QA — viết tổng hợp, đề xuất cải tiến |
 
 > 💡 **Tóm lại**: Bài tập này chủ yếu là **Software Testing** (tìm lỗi), nhưng phần Summary (báo cáo tổng hợp) là hoạt động **Quality Assurance** (đánh giá chất lượng, đề xuất cải tiến).
@@ -145,20 +148,20 @@ git push origin main
 
 ## 📚 Tài liệu tham khảo nhanh
 
-| Bạn muốn... | Đi đến |
-|-------------|--------|
-| Xem đề bài + rubric | [docs/ASSIGNMENT.md](docs/ASSIGNMENT.md) |
-| Xem yêu cầu nghiệp vụ (BRD) | [docs/BRD-yeu-cau-nghiep-vu.md](docs/BRD-yeu-cau-nghiep-vu.md) |
-| Đọc yêu cầu hệ thống (SRS) | [docs/SRS-library-system.md](docs/SRS-library-system.md) |
-| Xem tài khoản test | [docs/test-accounts.md](docs/test-accounts.md) |
-| Tra thuật ngữ | [docs/glossary.md](docs/glossary.md) |
-| Xem phạm vi test | [docs/testing-scope.md](docs/testing-scope.md) |
-| **Liên kết textbook ↔ bài tập** | [docs/textbook-concepts.md](docs/textbook-concepts.md) |
-| **Bài tập nhóm thảo luận** | [docs/group-exercises.md](docs/group-exercises.md) |
-| Xem ví dụ TC mẫu | [examples/sample-test-case.md](examples/sample-test-case.md) |
-| Xem ví dụ bug report | [examples/sample-bug-report.md](examples/sample-bug-report.md) |
-| Làm bài | [submissions/](submissions/) |
-| Câu hỏi thường gặp | [docs/faq.md](docs/faq.md) |
+| Bạn muốn...                     | Đi đến                                                         |
+|---------------------------------|----------------------------------------------------------------|
+| Xem đề bài + rubric             | [docs/ASSIGNMENT.md](docs/ASSIGNMENT.md)                       |
+| Xem yêu cầu nghiệp vụ (BRD)     | [docs/BRD-yeu-cau-nghiep-vu.md](docs/BRD-yeu-cau-nghiep-vu.md) |
+| Đọc yêu cầu hệ thống (SRS)      | [docs/SRS-library-system.md](docs/SRS-library-system.md)       |
+| Xem tài khoản test              | [docs/test-accounts.md](docs/test-accounts.md)                 |
+| Tra thuật ngữ                   | [docs/glossary.md](docs/glossary.md)                           |
+| Xem phạm vi test                | [docs/testing-scope.md](docs/testing-scope.md)                 |
+| **Liên kết textbook ↔ bài tập** | [docs/textbook-concepts.md](docs/textbook-concepts.md)         |
+| **Bài tập nhóm thảo luận**      | [docs/group-exercises.md](docs/group-exercises.md)             |
+| Xem ví dụ TC mẫu                | [examples/sample-test-case.md](examples/sample-test-case.md)   |
+| Xem ví dụ bug report            | [examples/sample-bug-report.md](examples/sample-bug-report.md) |
+| Làm bài                         | [submissions/](submissions/)                                   |
+| Câu hỏi thường gặp              | [docs/faq.md](docs/faq.md)                                     |
 
 ---
 
